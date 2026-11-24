@@ -10,6 +10,10 @@ function main(): void {
     console.error("FAIL: one-line.txt does not match the entry line.");
     process.exit(1);
   }
+  if (LINE !== LINE.trim()) {
+    console.error("FAIL: entry has leading or trailing whitespace.");
+    process.exit(1);
+  }
   if (LINE.includes("\n") || LINE.includes("\r")) {
     console.error("FAIL: entry must be exactly one line.");
     process.exit(1);
